@@ -5,6 +5,8 @@ const fastify = (await import("fastify")).default();
 const __dirname = new URL(".", import.meta.url).pathname;
 import fetch from "node-fetch"
 import Hypixel from "hypixel-api-reborn"
+import dotenv from 'dotenv'
+dotenv.config()
 const hypixel = new Hypixel.Client(process.env.KEY, {rateLimit: "AUTO", keyLimit: 120})
 
 fastify.register((await import("fastify-static")).default, {
